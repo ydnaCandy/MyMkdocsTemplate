@@ -14,8 +14,13 @@ uv sync
 source .venv/bin/activate
 
 # ライブラリのインストール
-uv add mkdocs mkdocs-material
+uv add zensical
 
+# テスト起動（siteフォルダできる）
+zensical serve
+
+# ビルド
+zensical build
 ```
 
 ## vscodeでのmarp表示とcssを適用する方法
