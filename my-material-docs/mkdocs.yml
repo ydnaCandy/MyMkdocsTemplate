@@ -4,16 +4,13 @@ site_url: https://example.com/     # 任意: サイトの公開URL
 
 # Materialテーマの有効化
 theme:
-    name: material
-    features:
-      - navigation.tabs      # ← これでメインメニューがトップバー（上部）に移動します
-      - navigation.sections  # (任意) セクション構造をより見やすくします
-      - toc.integrate        # ← これで右側の目次が消え、左側のサイドバーに統合されます
-      # windmillだとmermaidが表示されない
-    # name: windmill
-    
-    # 言語を日本語に設定（サイト内の日付や検索などのUIが日本語になります）
-    language: ja
+  features:
+    - navigation.tabs      # メインメニューをトップバー（上部）に移動
+    - toc.integrate        # 目次を左側にする
+    - content.code.copy    # コードコピーボタンの表示
+    - navigation.sections  # セクション構造をより見やすく
+  # 言語を日本語に設定（サイト内の日付や検索などのUIが日本語になります）
+  language: ja
 
 # cssの適用
 extra_css:
@@ -25,7 +22,6 @@ nav:
     - 使い方ガイド:                 # トップレベルの見出し (親)
         - はじめる: sample_dir/test.md
         - marpテスト: sample_dir/include_marp.md
-
 markdown_extensions:
   # コードブロックの拡張機能（ネスト対応やカスタム処理を可能にする）
   - pymdownx.superfences:
@@ -36,6 +32,8 @@ markdown_extensions:
           class: mermaid
           # Mermaidの定義コードをそのままHTMLに出力するためのフォーマット指定
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+        toc_depth: 2 # 表示する見出しを制限
 
 plugins:
   # プラグインの有効化
